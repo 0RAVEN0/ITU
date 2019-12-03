@@ -1,0 +1,6 @@
+1. stiahni si subory z gitu
+2. daj si to do súboru (pre istotu) awesome-project
+3. tento súbor si daj napr do C:\Users\XZ\awesome-project
+4. otvor si Príkazový riadok
+5. presmeruj sa tam kde máš ten súbor 
+6. ked už budeš v nom tak daj príkaz npm start a v prehliadači by sa ti mala otvoriť tá stránka

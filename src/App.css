@@ -1,5 +1,7 @@
 .App{
-  background: radial-gradient(#CC3399, #9966FF);
+  background-image: url("cool-background.png");
+  background-position: center;
+  background-attachment: fixed;
 }
 
 .App_container{
@@ -30,32 +32,90 @@
 }
 
 .Title {
-  color: #4B0082;
+  color: #00008e;
   font-family: "Comic Sans MS", serif;
   font-weight: normal;
-  text-align: center;
-  font-size: 5em;
+  text-align: left;
+  font-size: 4em;
 }
 
 .Info {
-  color: #DA70D6;
+   color: black;
+   font-family: "Comic Sans MS", serif;
+   font-size: 1em;
+   text-align: left;
+   list-style: none;
+   letter-spacing: 1px;
+ }
+
+.endGame {
+  color: darkgreen;
   font-family: "Comic Sans MS", serif;
-  font-size: 2em;
+  font-weight: normal;
+  text-align: center;
+  padding-bottom: 50px;
+  font-size: 3em;
+}
+
+.gameState {
+  color: blueviolet;
+  font-family: "Comic Sans MS", serif;
+  font-size: medium;
   text-align: center;
 }
 
-.Card {
-  height: calc(25% - 10px);
-  width:  calc(25% - 10px);
+.card {
+  height: 100px;
+  width:  100px;
   margin: 5px;
   position: relative;
+  box-shadow: 5px 5px 5px;
   background-color: #282c34;
+  border-radius: 5px;
+  color: #6e6b91;
+  text-align: center;
 }
 
-.Card-back,
+.card span{
+  line-height: 50px;
+}
+
+.gameBoard {
+  display: flex;
+  justify-content: center;
+}
+
+.Card:active{
+  transform: scale(.97);
+  transition: transform .2s;
+}
+
 .Card-front{
-  position: absolute;
-  width: 100%;
   height: 100%;
-  background:  #DA70D6;
+  width: 100%;
+  background:  #ffffff;
+  border-radius: 5px;
+}
+
+.Card-back{
+  height: 100%;
+  width: 100%;
+  background: radial-gradient(#ffd700, #4B0082);
+  border-radius: 5px;
+}
+
+.button{
+  background-color: #4B0082;
+  padding: 8px 16px;
+  text-align: center;
+  text-decoration: none;
+  color: #ffd700;
+  cursor: pointer;
+  box-shadow: 5px 5px 5px;
+  border-radius: 12px;
+}
+
+.click{
+  color: #ffd700;
+  text-decoration: none;
 }
