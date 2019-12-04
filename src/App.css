@@ -1,9 +1,27 @@
 .App{
-  background-image: url("cool-background.png");
+  background: white;
   background-position: center;
-  background-attachment: fixed;
 }
 
+nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background: lightpink;
+  color: darkgrey;
+  font-family: "Copperplate Gothic Light", serif;
+  font-weight: normal;
+  box-shadow: 5px 5px 5px;
+}
+
+.nav-links {
+  width: 50%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
+}
 .App_container{
   width: 640px;
   height: 640px;
@@ -12,28 +30,9 @@
   flex-wrap: wrap;
 }
 
-.App-logo {
-  height: 40vmin;
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #09d3ac;
-}
-
 .Title {
   color: #00008e;
-  font-family: "Comic Sans MS", serif;
+  font-family: "Copperplate Gothic Light", serif;
   font-weight: normal;
   text-align: left;
   font-size: 4em;
@@ -41,7 +40,7 @@
 
 .Info {
    color: black;
-   font-family: "Comic Sans MS", serif;
+   font-family: "Copperplate Gothic Light", serif;
    font-size: 1em;
    text-align: left;
    list-style: none;
@@ -50,7 +49,7 @@
 
 .endGame {
   color: darkgreen;
-  font-family: "Comic Sans MS", serif;
+  font-family: "Copperplate Gothic Light", serif;
   font-weight: normal;
   text-align: center;
   padding-bottom: 50px;
@@ -58,10 +57,11 @@
 }
 
 .gameState {
-  color: blueviolet;
-  font-family: "Comic Sans MS", serif;
+  color: black;
+  font-family: "Copperplate Gothic Light", serif;
   font-size: medium;
   text-align: center;
+  margin: 10px;
 }
 
 .card {
@@ -70,9 +70,9 @@
   margin: 5px;
   position: relative;
   box-shadow: 5px 5px 5px;
-  background-color: #282c34;
+  background-color: lightgoldenrodyellow;
   border-radius: 5px;
-  color: #6e6b91;
+  color: darkgrey;
   text-align: center;
 }
 
@@ -100,22 +100,32 @@
 .Card-back{
   height: 100%;
   width: 100%;
-  background: radial-gradient(#ffd700, #4B0082);
+  background: lightgoldenrodyellow;
   border-radius: 5px;
 }
 
 .button{
-  background-color: #4B0082;
-  padding: 8px 16px;
+  background-color:  lightgoldenrodyellow;
+  height: 100px;
+  width: 100px;
   text-align: center;
   text-decoration: none;
-  color: #ffd700;
-  cursor: pointer;
+  color: darkgrey;
   box-shadow: 5px 5px 5px;
   border-radius: 12px;
+  border-color: lightgoldenrodyellow;
+  margin: 10px;
 }
 
 .click{
   color: #ffd700;
   text-decoration: none;
+}
+
+p{
+  color: black;
+}
+
+td{
+  font-size: small;
 }

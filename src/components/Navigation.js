@@ -1,0 +1,30 @@
+import React, {Component} from "react";
+import { Link } from 'react-router-dom';
+import '../App.css';
+
+const navStyle = {
+    color: 'black'
+};
+
+class Navigation extends Component{
+
+    render(){
+        return  (
+            <nav>
+                <Link style={navStyle} to='/'>
+                    <h3>PEXESO</h3>
+                </Link>
+                <ul className="nav-links">
+                    <Link style={navStyle} to='/packages'>
+                        <li>Change package</li>
+                    </Link>
+                    <Link style={navStyle} to='/amount'>
+                        <li>Change count od cards</li>
+                    </Link>
+                </ul>
+            </nav>
+        );
+    }
+}
+
+export default Navigation;
