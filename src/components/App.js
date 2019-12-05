@@ -3,9 +3,10 @@ import Amount from './Amount';
 import Navigation from './Navigation';
 import Packages from './Packages';
 import Game_board from './Game_board';
+import Player from "./Player";
 import {BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
-import '../App.css';
+import '../style/App.css';
 
 class App extends Component {
   render(){
@@ -17,6 +18,7 @@ class App extends Component {
                     <Route path="/" exact component={Home}/>
                     <Route path="/packages" component={Packages}/>
                     <Route path="/amount" component={Amount}/>
+                    <Route path="/players" component={Player}/>
                 </Switch>
               </div>
             </Router>);

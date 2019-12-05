@@ -1,45 +1,24 @@
 import React, {Component} from "react";
-import '../App.css';
+import '../style/App.css';
+import {flips} from "./Game_board";
 
-const packState = {F: "FIRST",
-    S: "SECOND",
-    T:"THIRD",
-    N:"NULL"};
+export const packState = {package: 'FIRST'};
 
 class Packages extends Component{
-    constructor() {
-        super();
-
-        this.state={
-            gamepack: packState.N,
-        };
-    }
 
     game_pack(state){
-        switch (this.state.gamepack) {
+        switch (state) {
 
-            case packState.N:
-                if (state === "F") {
-                    this.setState({gamepack: packState.F});
-                }
-                if (state === "S") {
-                    this.setState({gamepack: packState.S});
-                }
-                if (state === "T") {
-                    this.setState({gamepack: packState.T});
-                }
+            case "F":
+                packState.package = 'FIRST';
                 break;
 
-            case packState.F:
-                this.setState({ gamepack: packState.N});
+            case "S":
+                packState.package = 'SECOND';
                 break;
 
-            case packState.S:
-                this.setState({ gamepack: packState.N});
-                break;
-
-            case packState.T:
-                this.setState({ gamepack: packState.N});
+            case "T":
+                packState.package = 'THIRD';
                 break;
 
             default:
@@ -49,9 +28,12 @@ class Packages extends Component{
     }
 
     render(){
+        flips.all_pair = 0;
+        flips.count_of_flips = 0;
+        flips.correct_pair = 0;
+        flips.score = 0;
         return  (
             <div className="gameState">
-                Choose package...
                 <div className="gameBoard">
                     <table>
                         <tbody>

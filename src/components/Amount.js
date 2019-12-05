@@ -1,33 +1,28 @@
 import React, { Component } from 'react';
 
-import '../App.css';
+import '../style/App.css';
+import {flips} from "./Game_board";
 
-const heightEnum = {VJS: "4", VJP: "5"};
-const widthEnum = {SJT: "3", SJS: "4"};
+export const heightEnum = {height: '4'};
+export const widthEnum = {width: '4'};
 
 class Amount extends Component{
-    constructor() {
-        super();
-
-        this.state={
-            height: heightEnum.VJS,
-            width: widthEnum.SJS,
-        };
-    }
-
     game_amount(state){
         switch (state) {
 
             case "12":
-                this.setState({height: heightEnum.VJS, width: widthEnum.SJT});
+                heightEnum.height = '4';
+                widthEnum.width = '3';
                 break;
 
             case "16":
-                this.setState({height: heightEnum.VJS, width: widthEnum.SJS});
+                heightEnum.height = '4';
+                widthEnum.width = '4';
                 break;
 
             case "20":
-                this.setState({height: heightEnum.VJP, width: widthEnum.SJS});
+                heightEnum.height = '5';
+                widthEnum.width = '4';
                 break;
 
             default:
@@ -36,25 +31,29 @@ class Amount extends Component{
         }
     }
     render(){
+        flips.all_pair = 0;
+        flips.count_of_flips = 0;
+        flips.correct_pair = 0;
+        flips.score = 0;
         return  (
             <div className="gameState">
-                Vyber si, na koľko kartičiek sa cítiš.
+                Choose the number of cards you would like.
                 <div className="gameBoard">
                     <table>
                         <tbody>
                         <tr>
                             <button className="button" onClick={() => this.game_amount("12")}>
-                                <p>12</p>
+                                <p>12 cards</p>
                             </button>
                         </tr>
                         <tr>
                             <button className="button" onClick={() => this.game_amount("16")}>
-                                <p>16</p>
+                                <p>16 cards</p>
                             </button>
                         </tr>
                         <tr>
                             <button className="button" onClick={() => this.game_amount("20")}>
-                                <p>20</p>
+                                <p>20 cards</p>
                             </button>
                         </tr>
                         </tbody>

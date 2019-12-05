@@ -1,12 +1,12 @@
 import React, { Component } from 'react';
 
-import '../App.css';
+import '../style/App.css';
 
 class End extends Component{
     render(){
         return (
             <div className="endGame">
-                Congratulation you successfully finished game.
+                Congratulations, you successfully finished the game.
             </div>
         );
     }

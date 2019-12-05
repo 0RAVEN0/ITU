@@ -1,6 +1,6 @@
 import React, {Component} from "react";
 import { Link } from 'react-router-dom';
-import '../App.css';
+import '../style/App.css';
 
 const navStyle = {
     color: 'black'
@@ -16,10 +16,13 @@ class Navigation extends Component{
                 </Link>
                 <ul className="nav-links">
                     <Link style={navStyle} to='/packages'>
-                        <li>Change package</li>
+                        <li>Change pack style</li>
                     </Link>
                     <Link style={navStyle} to='/amount'>
-                        <li>Change count od cards</li>
+                        <li>Change number of cards</li>
+                    </Link>
+                    <Link style={navStyle} to='/players'>
+                        <li>Change number of players</li>
                     </Link>
                 </ul>
             </nav>
