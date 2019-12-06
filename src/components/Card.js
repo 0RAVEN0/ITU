@@ -1,4 +1,5 @@
 import React, {Component} from "react";
+import ReactCardFlip from 'react-card-flip';
 import { packState } from "./Packages";
 import '../style/App.css';
 
@@ -17,16 +18,22 @@ class Card extends Component{
         }
 
         if (packState.package === "THIRD"){
-            imageArray=["./img3/cars.jpg","./img3/car2.jpg","./img3/car3.jpg", "./img3/car4.jpg", "./img3/car5.jpg", "./img3/car6.png", "./img3/car7.jpg", "./img3/car8.jpg", "./img3/car9.jpg", "./img3/car10.jpg"]
+            imageArray=["./img3/cars.jpg","./img3/car2.jpg", "./img3/car4.jpg", "./img3/car6.png", "./img3/car7.jpg", "./img3/car8.jpg", "./img3/car9.jpg", "./img3/car10.jpg","./img3/car3.jpg", "./img3/car5.jpg"]
         }
     }
 
         render(){
         return  (
             <div className="card">
-              <span>
-                { this.props.card.flipped ? <img className="Card-front" src={ imageArray[this.props.card.cardValue - 1] }/> : <img className="Card-back" src="./img/back.svg" alt="Logo"/> }
-              </span>
+                <ReactCardFlip isFlipped={this.props.card.flipped} flipDirection="horizontal">
+                    <span>
+                        <img className="Card-back" src="./img/back.svg" alt="Logo"/>
+                    </span>
+                    <span>
+                        <img className="Card-front" src={ imageArray[this.props.card.cardValue - 1] }/>
+                    </span>
+                </ReactCardFlip>
+
             </div>
         );
     }

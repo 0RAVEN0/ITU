@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 
 import '../style/App.css';
+import {flips} from "./Game_board";
 
 export const Click = {click: 0};
 
@@ -15,6 +16,10 @@ class Player extends Component{
         }
     }
     render(){
+        flips.all_pair = 0;
+        flips.correct_pair = 0;
+        flips.score = 0;
+        flips.score2 = 0;
         return (
             <div className="gameState">
                 <div className="gameBoard">

@@ -29,25 +29,37 @@ class Packages extends Component{
 
     render(){
         flips.all_pair = 0;
-        flips.count_of_flips = 0;
         flips.correct_pair = 0;
         flips.score = 0;
+        flips.score2 = 0;
         return  (
             <div className="gameState">
                 <div className="gameBoard">
                     <table>
                         <tbody>
-                            <tr onClick={() => this.game_pack("F")}>
+                            <tr>
                                 <td>SNOOPY DOG</td>
-                                <td><img className="button" src="./img/snoopy.png" alt="Logo"/></td>
+                                <td>
+                                    <button className="button" onClick={() => this.game_pack("F")}>
+                                        <img className="button_image" src="./img/snoopy.png" alt="Snoopy"/>
+                                    </button>
+                                </td>
                             </tr>
-                            <tr onClick={() => this.game_pack("S")}>
+                            <tr>
                                 <td>FROZEN</td>
-                                <td><img className="button" src="./img2/frozen.jpg" alt="Logo"/></td>
+                                <td>
+                                    <button className="button" onClick={() => this.game_pack("S")}>
+                                        <img className="button_image" src="./img2/frozen.jpg" alt="Frozen"/>
+                                    </button>
+                                </td>
                             </tr>
-                            <tr onClick={() => this.game_pack("T")}>
+                            <tr>
                                 <td>CARS</td>
-                                <td><img className="button" src="./img3/cars.jpg" alt="Logo"/></td>
+                                <td>
+                                    <button className="button" onClick={() => this.game_pack("T")}>
+                                        <img className="button_image" src="./img3/cars.jpg" alt="Cars"/>
+                                    </button>
+                                </td>
                             </tr>
                         </tbody>
                     </table>
@@ -57,4 +69,6 @@ class Packages extends Component{
     }
 }
 
+/*<td>SNOOPY DOG</td>
+<td><img className="button" src="./img/snoopy.png" alt="Logo"/></td>*/
 export default Packages;

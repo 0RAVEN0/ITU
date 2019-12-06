@@ -4,14 +4,16 @@ import Card from "./Card";
 import End from "./End";
 import { heightEnum, widthEnum } from "./Amount";
 import { Click } from "./Player";
+import Confetti from "react-dom-confetti";
+import {Link} from "react-router-dom";
 
 const pexesoState = {WFTFC: "WAITING_FOR_THE_FIRST_CARD",
     WFTSC: "WAITING_FOR_THE_SECOND_CARD",
     WRONG:"WRONG",
     FINISH: "FINISH"};
 
-export const flips = {count_of_flips: 0, correct_pair: 0, all_pair: 0, score: 0}
-var state = false;
+export const flips = {correct_pair: 0, all_pair: 0, score: 0, score2: 0}
+
 
 //tato funkcia je z:... Pouzžívam ju na náhodné rozhodenie obrázkov.
 function randomizeArray(a) {
@@ -68,7 +70,7 @@ class Game_board extends Component {
     }
 
     cardClick(card) {
-        flips.count_of_flips++;
+
         if(!card.flipped){
 
             switch (this.state.gameStates) {
@@ -82,7 +84,17 @@ class Game_board extends Component {
                     this.state.cards[card.rowIndex][card.collumnIndex].flipped = true;
                     if(this.state.firstCard.cardValue === card.cardValue){
                         flips.correct_pair++;
-                        flips.score = flips.score + 150;
+
+                        if (this.state.player === false && Click.click === 1){
+                            flips.score = flips.score + 150;
+                        }
+                        else if (this.state.player === true && Click.click === 1){
+                            flips.score2 = flips.score2 + 150;
+                        }
+                        else{
+                            flips.score = flips.score + 150;
+                        }
+
                         if (flips.correct_pair === flips.all_pair){
                             this.setState({gameStates: pexesoState.FINISH, cards: this.state.cards});
                         }else {
@@ -94,7 +106,16 @@ class Game_board extends Component {
                     break;
 
                 case pexesoState.WRONG:
-                    flips.score = flips.score - 25;
+                    if (this.state.player === false && Click.click === 1){
+                        flips.score = flips.score - 25;
+                    }
+                    else if (this.state.player === true && Click.click === 1){
+                        flips.score2 = flips.score2 - 25;
+                    }
+                    else{
+                        flips.score = flips.score - 25;
+                    }
+
                     this.state.cards[this.state.firstCard.rowIndex][this.state.firstCard.collumnIndex].flipped = false;
                     this.state.cards[this.state.secondCard.rowIndex][this.state.secondCard.collumnIndex].flipped = false;
                     this.state.cards[card.rowIndex][card.collumnIndex].flipped = true;
@@ -110,20 +131,26 @@ class Game_board extends Component {
     }
 
     render() {
-        console.log(Click.click);
         const cardsRendered = this.state.cards.map((rowOfCards, rowIndex) =>
             <tr>{rowOfCards.map((card, indexOfCardInRow) => <td onClick={() => this.cardClick(card)}><Card card={card}/>
             </td>)}</tr>);
         return (
             <div className="App">
                 <div className="gameState">
-                    { this.state.gameStates === "FINISH" ? <End/> : "" }
-                    { Click.click === 1 ? (this.state.player ? "2.hrac" : "1.hrac") : "" }
-                    <ul className="Info">
-                        <li>FLIPS:{flips.count_of_flips}</li>
-                        <li>YOU HAVE {flips.correct_pair} PAIR FROM {flips.all_pair}</li>
-                        <li>YOUR SCORE IS : {flips.score}</li>
-                    </ul>
+                    { this.state.gameStates === "FINISH" ? <End /> : "" }
+                    { Click.click === 1 ? (this.state.player ? <p className="second">2.player on turn</p> : <p className="first">1.player on turn</p>) : "" }
+                    { Click.click === 1 ?
+                        <ul className="Info">
+                            <li>YOU HAVE |{flips.correct_pair}| PAIR FROM {flips.all_pair}</li>
+                            <li>1.PLAYER SCORE IS : {flips.score}</li>
+                            <li>2.PLAYER SCORE IS : {flips.score2}</li>
+                        </ul>
+                        :
+                        <ul className="Info">
+                            <li>YOU HAVE |{flips.correct_pair}| PAIR FROM {flips.all_pair}</li>
+                            <li>YOUR SCORE IS : {flips.score}</li>
+                        </ul>
+                    }
                 </div>
                 <div className="gameBoard">
                     <table>

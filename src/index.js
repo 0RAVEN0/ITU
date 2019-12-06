@@ -3,7 +3,6 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
-import Game_board from "./components/Game_board";
 
 ReactDOM.render(<App/>, document.getElementById('root'));
 

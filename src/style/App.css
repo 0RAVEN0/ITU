@@ -117,6 +117,12 @@ nav {
   margin: 10px;
 }
 
+.button_image {
+  height: 80px;
+  width: 80px;
+  border-radius: 12px;
+}
+
 .click{
   color: #ffd700;
   text-decoration: none;
@@ -124,6 +130,16 @@ nav {
 
 p{
   color: black;
+}
+
+.second{
+  color: lightskyblue;
+  font-size: large;
+}
+
+.first{
+  color: lightseagreen;
+  font-size: large;
 }
 
 td{

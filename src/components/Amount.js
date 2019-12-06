@@ -32,9 +32,9 @@ class Amount extends Component{
     }
     render(){
         flips.all_pair = 0;
-        flips.count_of_flips = 0;
         flips.correct_pair = 0;
         flips.score = 0;
+        flips.score2 = 0;
         return  (
             <div className="gameState">
                 Choose the number of cards you would like.
