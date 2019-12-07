@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import Amount from './Amount';
 import Navigation from './Navigation';
 import Packages from './Packages';
-import Game_board from './Game_board';
+import GameBoard from './Game_board';
 import Player from "./Player";
 import {BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
@@ -27,7 +27,7 @@ class App extends Component {
 
 const Home = () => (
     <div>
-        <Game_board />
+        <GameBoard />
     </div>
 );
 

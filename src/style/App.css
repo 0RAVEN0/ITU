@@ -69,11 +69,15 @@ nav {
   width:  100px;
   margin: 5px;
   position: relative;
-  box-shadow: 5px 5px 5px;
+  box-shadow: 5px 5px 3px -2px rgba(0,0,0,0.2);
   background-color: lightgoldenrodyellow;
   border-radius: 5px;
   color: darkgrey;
   text-align: center;
+  cursor: pointer;
+}
+.card:hover{
+  transform: scale(1.02);
 }
 
 .card span{
@@ -113,8 +117,12 @@ nav {
   color: darkgrey;
   box-shadow: 5px 5px 5px;
   border-radius: 12px;
-  border-color: lightgoldenrodyellow;
+  border: none;
+  outline: 0;
   margin: 10px;
+}
+.button:active{
+  transform: scale(0.97);
 }
 
 .button_image {

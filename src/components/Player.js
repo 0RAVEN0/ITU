@@ -26,14 +26,18 @@ class Player extends Component{
                     <table>
                         <tbody>
                         <tr>
-                            <button className="button" onClick={ () => this.game_player("one") }>
-                                <p>1 players</p>
-                            </button>
+                            <td>
+                                <button className="button" onClick={ () => this.game_player("one") }>
+                                    <p>1 players</p>
+                                </button>
+                            </td>
                         </tr>
                         <tr>
-                            <button className="button" onClick={ () => this.game_player("two")}>
-                                <p>2 players</p>
-                            </button>
+                            <td>
+                                <button className="button" onClick={ () => this.game_player("two")}>
+                                    <p>2 players</p>
+                                </button>
+                            </td>
                         </tr>
                         </tbody>
                     </table>

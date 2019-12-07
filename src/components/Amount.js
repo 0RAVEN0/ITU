@@ -42,19 +42,25 @@ class Amount extends Component{
                     <table>
                         <tbody>
                         <tr>
-                            <button className="button" onClick={() => this.game_amount("12")}>
-                                <p>12 cards</p>
-                            </button>
+                            <td>
+                                <button className="button" onClick={() => this.game_amount("12")}>
+                                    <p>12 cards</p>
+                                </button>
+                            </td>
                         </tr>
                         <tr>
-                            <button className="button" onClick={() => this.game_amount("16")}>
-                                <p>16 cards</p>
-                            </button>
+                            <td>
+                                <button className="button" onClick={() => this.game_amount("16")}>
+                                    <p>16 cards</p>
+                                </button>
+                            </td>
                         </tr>
                         <tr>
-                            <button className="button" onClick={() => this.game_amount("20")}>
-                                <p>20 cards</p>
-                            </button>
+                            <td>
+                                <button className="button" onClick={() => this.game_amount("20")}>
+                                    <p>20 cards</p>
+                                </button>  
+                            </td>
                         </tr>
                         </tbody>
                     </table>
