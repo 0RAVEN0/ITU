@@ -26,7 +26,7 @@ class Card extends Component{
         if (packState.package === "KOSTOLY"){
             imageArray=[
                 "./kostolyBrno/b_panny_marie.jpg",
-                "./kostolyBrno/ch_sv_vaclava.jfif",
+                "./kostolyBrno/ch_sv_vaclava.jpg",
                 "./kostolyBrno/chram_jak.jpg",
                 "./kostolyBrno/k_jezuitsky.jpg",
                 "./kostolyBrno/k_sv_jakuba.jpg",
@@ -36,10 +36,25 @@ class Card extends Component{
                 "./kostolyBrno/kat_sv_petra_a_pavla.jpg",
                 "./kostolyBrno/sbor_husov.jpg"
             ]
+        }        
+        if (packState.package === "NAMESTIA"){
+            imageArray=[
+                "./namestiaBrno/dominikanske.jpg",
+                "./namestiaBrno/jakubske.jpg",
+                "./namestiaBrno/malinak.jpg",
+                "./namestiaBrno/svobodak.jfif",
+                "./namestiaBrno/zelnak.jpg",
+                "./namestiaBrno/moravak.jpg",
+                "./namestiaBrno/mendlak.jpg",
+                "./namestiaBrno/silingrak.jpg",
+                "./namestiaBrno/komenskeho.jpg",
+                "./namestiaBrno/hlavas.jpg"
+            ]
         }
     }
 
         render(){
+            console.log(this.props.card);
             const author = this.props.author;
             if(author === 'xocena06'){
                 cardBackImg = './logoBrno.jpg';
