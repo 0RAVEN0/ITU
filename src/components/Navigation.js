@@ -46,8 +46,8 @@ class Navigation extends Component{
                     <Link style={navStyle} to='/players'>
                         { 
                         this.props.author === 'xdzuba00' 
-                        ? <li>Change number of cards</li>
-                        : <li>ZMĚŇ POČET KARET</li>
+                        ? <li>Change number of players</li>
+                        : <li>ZMĚŇ POČET HRÁČŮ</li>
                         }
                     </Link>
                 </ul>

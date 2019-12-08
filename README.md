@@ -3,7 +3,6 @@
 
 To set up this project do following on node js cmd navigated in the project directory:
 ## `npm install`
-## `npm build`
 ## `npm start`
 
 You can change author's version.
