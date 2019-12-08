@@ -1,4 +1,16 @@
-.App{
+/**
+ * Vysoké Učení Technické v Brne
+ * Fakulta Informačných Technologie
+ * Predmet: ITU
+ * Projekt: Pexeso
+ * 
+ * @author Romana Džubárová (xdzuba00)
+ * @author Daniel Miloslav Očenáš (xocena06)
+ * 
+ * @description general styling of the application
+ */
+ 
+ .App{
   background: white;
   background-position: center;
 }
@@ -27,11 +39,19 @@
 }
 
 .nav-links {
+  min-height: 10vh;
   width: 50%;
   display: flex;
   justify-content: space-around;
   align-items: center;
   list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.nav-links li{
+  
+  height: 100%;
 }
 .App_container{
   width: 640px;

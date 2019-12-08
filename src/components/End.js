@@ -1,4 +1,15 @@
-import React, { Component } from 'react';
+/**
+ * Vysoké Učení Technické v Brne
+ * Fakulta Informačných Technologie
+ * Predmet: ITU
+ * Projekt: Pexeso
+ * 
+ * @author Romana Džubárová (xdzuba00)
+ * 
+ * @description End of the game information
+ */
+
+ import React, { Component } from 'react';
 
 import '../style/App.css';
 import {Click} from "./Player";

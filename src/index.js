@@ -1,3 +1,14 @@
+/**
+ * Vysoké Učení Technické v Brne
+ * Fakulta Informačných Technologie
+ * Predmet: ITU
+ * Projekt: Pexeso
+ * 
+ * @author Romana Džubárová (xdzuba00)
+ * @author Daniel Miloslav Očenáš (xocena06)
+ * 
+ * @description Index file, renders application file
+ */
 
 import React from 'react';
 import ReactDOM from 'react-dom';

@@ -1,3 +1,16 @@
+/**
+ * Vysoké Učení Technické v Brne
+ * Fakulta Informačných Technologie
+ * Predmet: ITU
+ * Projekt: Pexeso
+ * 
+ * @author Romana Džubárová (xdzuba00)
+ * @author Daniel Miloslav Očenáš (xocena06)
+ * 
+ * @description defines look of individual packages of the pexeso cards
+ *              card is used as a external component imported from react-card-flip library
+ */
+
 import React, {Component} from "react";
 import ReactCardFlip from 'react-card-flip';
 import { packState } from "./Packages";
@@ -15,15 +28,15 @@ class Card extends Component{
             imageArray=["./img/marad.svg","./img/snoopy.png","./img/caka.svg", "./img/lezi.svg", "./img/lubi.svg", "./img/odpociva.svg", "./img/skavou.svg", "./img/tesisa.svg", "./img/velmisatesi.svg", "./img/zaselubi.svg"];
         }
 
-        if (packState.package === "SECOND"){
+        else if (packState.package === "SECOND"){
             imageArray=["./img2/frozen.svg","./img2/frozen2.svg","./img2/frozen3.svg", "./img2/frozen4.svg", "./img2/frozen5.svg", "./img2/frozen6.svg", "./img2/frozen7.svg", "./img2/frozen8.svg", "./img2/frozen9.svg", "./img2/frozen10.svg"]
         }
 
-        if (packState.package === "THIRD"){
+        else if (packState.package === "THIRD"){
             imageArray=["./img3/cars.svg","./img3/car2.svg", "./img3/car4.svg", "./img3/car6.svg", "./img3/car7.svg", "./img3/car8.svg", "./img3/car9.svg", "./img3/car10.svg","./img3/car3.svg", "./img3/car5.svg"]
         }        
         
-        if (packState.package === "KOSTOLY"){
+        else if (packState.package === "KOSTOLY"){
             imageArray=[
                 "./kostolyBrno/b_panny_marie.jpg",
                 "./kostolyBrno/ch_sv_vaclava.jpg",
@@ -37,7 +50,7 @@ class Card extends Component{
                 "./kostolyBrno/sbor_husov.jpg"
             ]
         }        
-        if (packState.package === "NAMESTIA"){
+        else if (packState.package === "NAMESTIA"){
             imageArray=[
                 "./namestiaBrno/dominikanske.jpg",
                 "./namestiaBrno/jakubske.jpg",
@@ -54,7 +67,6 @@ class Card extends Component{
     }
 
         render(){
-            console.log(this.props.card);
             const author = this.props.author;
             if(author === 'xocena06'){
                 cardBackImg = './logoBrno.jpg';

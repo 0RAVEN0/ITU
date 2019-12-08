@@ -1,3 +1,15 @@
+/**
+ * Vysoké Učení Technické v Brne
+ * Fakulta Informačných Technologie
+ * Predmet: ITU
+ * Projekt: Pexeso
+ * 
+ * @author Romana Džubárová (xdzuba00)
+ * @author Daniel Miloslav Očenáš (xocena06)
+ * 
+ * @description The main router of the application
+ */
+
 import React, { Component } from 'react';
 import Amount from './Amount';
 import Navigation from './Navigation';
@@ -19,7 +31,7 @@ class App extends Component {
                 <Navigation author={author}/>
                 <Switch>
                     <Route path="/" exact component={Home}/>
-                    <Route path="/packages" component={Packages}/>
+                    <Route path="/packages" component={Packages} />
                     <Route path="/amount" component={Amount}/>
                     <Route path="/players" component={Player}/>
                 </Switch>

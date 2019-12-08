@@ -1,3 +1,15 @@
+/**
+ * Vysoké Učení Technické v Brne
+ * Fakulta Informačných Technologie
+ * Predmet: ITU
+ * Projekt: Pexeso
+ * 
+ * @author Daniel Miloslav Očenáš (xocena06)
+ * 
+ * @description Enables user to change ammout of pairs to play with
+ *              at the same time defines area for the card displaying
+ */
+
 import React, { Component } from 'react';
 
 import '../style/App.css';

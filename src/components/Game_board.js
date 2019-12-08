@@ -1,11 +1,21 @@
+/**
+ * Vysoké Učení Technické v Brne
+ * Fakulta Informačných Technologie
+ * Predmet: ITU
+ * Projekt: Pexeso
+ * 
+ * @author Romana Džubárová (xdzuba00)
+ * @author Daniel Miloslav Očenáš (xocena06)
+ * 
+ * @description Application layer of the app
+ */
+
 import React, { Component } from 'react';
 import '../style/App.css';
 import Card from "./Card";
 import End from "./End";
 import { heightEnum, widthEnum } from "./Amount";
 import { Click } from "./Player";
-
-
 
 const pexesoState = {WFTFC: "WAITING_FOR_THE_FIRST_CARD",
     WFTSC: "WAITING_FOR_THE_SECOND_CARD",
@@ -61,12 +71,14 @@ class Game_board extends Component {
             }
         }
 
-        this.state={
+        this.state = {
             cards: board_of_cards,
             gameStates: pexesoState.WFTFC,
             firstCard: null,
             secondCard: null,
-            player: false};
+            combo:1,
+            player: false
+        };
     }
 
     shuffleCards(){
@@ -102,14 +114,21 @@ class Game_board extends Component {
                     if(this.state.firstCard.cardValue === card.cardValue){
                         flips.correct_pair++;
 
+                        // combo score bonus
+                        var newCombo = this.state.combo;
+                        newCombo++;
+                        this.setState({
+                            combo: newCombo
+                        })
+
                         if (this.state.player === false && Click.click === 1){
-                            flips.score = flips.score + 150;
+                            flips.score = flips.score + 150 * this.state.combo;
                         }
                         else if (this.state.player === true && Click.click === 1){
-                            flips.score2 = flips.score2 + 150;
+                            flips.score2 = flips.score2 + 150 * this.state.combo;
                         }
                         else{
-                            flips.score = flips.score + 150;
+                            flips.score = flips.score + 150 * this.state.combo;
                         }
 
                         if (flips.correct_pair === flips.all_pair){
@@ -124,6 +143,9 @@ class Game_board extends Component {
                     break;
 
                 case pexesoState.WRONG:
+                    this.setState({
+                        combo : 1
+                    })
                     if (this.state.player === false && Click.click === 1){
                         flips.score = flips.score - 25;
                     }
@@ -175,11 +197,6 @@ class Game_board extends Component {
                         { cardsRendered }
                         </tbody>
                     </table>
-                </div>
-                <div>
-                    <button onClick={() => this.shuffleCards()}>
-                        Shuffle
-                    </button>
                 </div>
             </div>
 

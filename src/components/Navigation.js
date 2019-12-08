@@ -1,4 +1,16 @@
-import React, {Component} from "react";
+/**
+ * Vysoké Učení Technické v Brne
+ * Fakulta Informačných Technologie
+ * Predmet: ITU
+ * Projekt: Pexeso
+ * 
+ * @author Romana Džubárová (xdzuba00)
+ * @author Daniel Miloslav Očenáš (xocena06)
+ * 
+ * @description navigates between various settings and game 
+ */
+
+ import React, {Component} from "react";
 import { Link } from 'react-router-dom';
 import '../style/App.css';
 

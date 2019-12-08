@@ -1,4 +1,16 @@
-import React, {Component} from "react";
+/**
+ * Vysoké Učení Technické v Brne
+ * Fakulta Informačných Technologie
+ * Predmet: ITU
+ * Projekt: Pexeso
+ * 
+ * @author Romana Džubárová (xdzuba00)
+ * @author Daniel Miloslav Očenáš (xocena06)
+ * 
+ * @description defines packages that can be selected and changed as desired
+ */
+
+ import React, {Component} from "react";
 import '../style/App.css';
 import {flips} from "./Game_board";
 
@@ -86,6 +98,7 @@ class Packages extends Component{
                                 </td>
                             </tr>
                         </tbody>
+                            
                     </table>
                 </div>
             </div>
@@ -93,6 +106,4 @@ class Packages extends Component{
     }
 }
 
-/*<td>SNOOPY DOG</td>
-<td><img className="button" src="./img/snoopy.png" alt="Logo"/></td>*/
 export default Packages;

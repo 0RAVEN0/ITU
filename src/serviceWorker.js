@@ -1,4 +1,16 @@
-// This optional code is used to register a service worker.
+/**
+ * Vysoké Učení Technické v Brne
+ * Fakulta Informačných Technologie
+ * Predmet: ITU
+ * Projekt: Pexeso
+ * 
+ * @author Romana Džubárová (xdzuba00)
+ * @author Daniel Miloslav Očenáš (xocena06)
+ * 
+ * @description Service Worker
+ */
+
+ // This optional code is used to register a service worker.
 // register() is not called by default.
 
 // This lets the app load faster on subsequent visits in production, and gives
