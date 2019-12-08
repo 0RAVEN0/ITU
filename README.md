@@ -1,7 +1,10 @@
+## Project ITU PEXESO, VUT FIT
+<h3>Authors: Romana Džubárova, Daniel Očenáš </hr>
+
 To set up this project do following on node js cmd navigated in the project directory:
-## npm install
-## npm build
-## npm start
+## 'npm install'
+## 'npm build'
+## 'npm start'
 
 You can change author's version.
 Open file App.js in src/components and change author based on description.
