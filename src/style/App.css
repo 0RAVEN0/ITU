@@ -50,8 +50,9 @@
 }
 
 .nav-links li{
-  
+  text-align: center;
   height: 100%;
+  font-size: 0.7em;
 }
 .App_container{
   width: 640px;
@@ -70,13 +71,15 @@
 }
 
 .Info {
-   color: black;
-   font-family: "Copperplate Gothic Light", serif;
-   font-size: 1em;
-   text-align: left;
-   list-style: none;
-   letter-spacing: 1px;
- }
+  margin:0;
+  padding: 0;
+  color: black;
+  font-family: "Copperplate Gothic Light", serif;
+  font-size: 0.5em;
+  text-align: left;
+  list-style: none;
+  letter-spacing: 1px;
+}
 
 .endGame {
   color: darkgreen;
@@ -96,14 +99,79 @@
 }
 
 .card {
-  height: 100px;
-  width:  100px;
+  height: 80px;
+  width:  80px;
   margin: 5px;
   position: relative;
   border-radius: 5px;
   color: darkgrey;
   text-align: center;
   cursor: pointer;
+}
+
+.Card:active{
+  transform: scale(.97);
+  transition: transform .2s;
+}
+
+.Card-front{
+  height: 80px;
+  width: 80px;
+  background:  #ffffff;
+  border-radius: 5px;
+  vertical-align: center;
+  box-shadow: 3px 3px 3px 2.5px rgba(0,0,0,0.2);
+}
+
+.Card-back{
+  height: 80px;
+  width: 80px;
+  background: lightgoldenrodyellow;
+  border-radius: 5px;
+  vertical-align: center;
+  box-shadow: 3px 3px 3px 2.5px rgba(0,0,0,0.2);
+}
+
+@media (min-width: 600px){
+  .card {
+    height: 100px;
+    width:  100px;
+    position: relative;
+    border-radius: 5px;
+    color: darkgrey;
+    text-align: center;
+    cursor: pointer;
+  }
+  .Card-front{
+    height: 100px;
+    width: 100px;
+    background:  #ffffff;
+    border-radius: 5px;
+    vertical-align: center;
+    box-shadow: 3px 3px 3px 2.5px rgba(0,0,0,0.2);
+  }
+  
+  .Card-back{
+    height: 100px;
+    width: 100px;
+    background: lightgoldenrodyellow;
+    border-radius: 5px;
+    vertical-align: center;
+    box-shadow: 3px 3px 3px 2.5px rgba(0,0,0,0.2);
+  }
+  .Info{   
+    color: black;
+    font-family: "Copperplate Gothic Light", serif;
+    font-size: 1em;
+    text-align: left;
+    list-style: none;
+    letter-spacing: 1px;
+  }
+  .nav-links li{
+    text-align: center;
+    height: 100%;
+    font-size: 1.1em;
+  }
 }
 .card:hover{
   transform: scale(1.02);
@@ -116,29 +184,6 @@
 .gameBoard {
   display: flex;
   justify-content: center;
-}
-
-.Card:active{
-  transform: scale(.97);
-  transition: transform .2s;
-}
-
-.Card-front{
-  height: 100px;
-  width: 100px;
-  background:  #ffffff;
-  border-radius: 5px;
-  vertical-align: center;
-  box-shadow: 3px 3px 3px 2.5px rgba(0,0,0,0.2);
-}
-
-.Card-back{
-  height: 100%;
-  width: 100%;
-  background: lightgoldenrodyellow;
-  border-radius: 5px;
-  vertical-align: center;
-  box-shadow: 3px 3px 3px 2.5px rgba(0,0,0,0.2);
 }
 
 .button{
