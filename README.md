@@ -1,11 +1,13 @@
 To set up this project do following on node js cmd navigated in the project directory:
-1. npm install
-2. npm build
-3. npm start
+## npm install
+## npm build
+## npm start
 
 You can change author's version.
 Open file App.js in src/components and change author based on description.
-
+</br>
+</br>
+</br>
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
