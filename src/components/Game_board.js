@@ -22,7 +22,7 @@ const pexesoState = {WFTFC: "WAITING_FOR_THE_FIRST_CARD",
     WRONG:"WRONG",
     FINISH: "FINISH"};
 
-export const flips = {correct_pair: 0, all_pair: 0, score: 0, score2: 0}
+export const flips = {correct_pair: 0, all_pair: 0, score: 0, score2: 0, turns: 0}
 
 
 //tato funkcia je z:... Pouzžívam ju na náhodné rozhodenie obrázkov.
@@ -77,6 +77,7 @@ class Game_board extends Component {
             firstCard: null,
             secondCard: null,
             combo:1,
+            turns: 0,
             player: false
         };
     }
@@ -101,12 +102,14 @@ class Game_board extends Component {
     cardClick(card) {
 
         if(!card.flipped){
-
+            var inc = this.state.turns;
             switch (this.state.gameStates) {
 
                 case pexesoState.WFTFC:
                     this.state.cards[card.rowIndex][card.collumnIndex].flipped = true;
-                    this.setState({cards : this.state.cards, firstCard: card, gameStates: pexesoState.WFTSC});
+                    
+                    inc++;
+                    this.setState({cards : this.state.cards, firstCard: card, gameStates: pexesoState.WFTSC, turns: inc});
                     break;
 
                 case pexesoState.WFTSC:
@@ -159,8 +162,9 @@ class Game_board extends Component {
                     this.state.cards[this.state.firstCard.rowIndex][this.state.firstCard.collumnIndex].flipped = false;
                     this.state.cards[this.state.secondCard.rowIndex][this.state.secondCard.collumnIndex].flipped = false;
                     this.state.cards[card.rowIndex][card.collumnIndex].flipped = true;
-
-                    this.setState({gameStates: pexesoState.WFTSC, cards: this.state.cards, firstCard: card, player: !this.state.player});
+                    
+                    inc++;
+                    this.setState({gameStates: pexesoState.WFTSC, cards: this.state.cards, firstCard: card, player: !this.state.player,turns:inc});
                     break;
 
                 default:
@@ -169,6 +173,7 @@ class Game_board extends Component {
             }
         }
     }
+
 
     render() {
         const cardsRendered = this.state.cards.map((rowOfCards, rowIndex) =>
@@ -187,7 +192,7 @@ class Game_board extends Component {
                         :
                         <ul className="Info">
                             <li>YOU HAVE |{flips.correct_pair}| PAIR FROM {flips.all_pair}</li>
-                            <li>YOUR SCORE IS : {flips.score}</li>
+                    <li>YOUR SCORE IS : {flips.score} &emsp; TURNS : {this.state.turns}</li>
                         </ul>
                     }
                 </div>

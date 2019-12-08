@@ -82,7 +82,7 @@ class Card extends Component{
                         <img className="Card-back" src={cardBackImg} alt="Logo"/>
                     </span>
                     <span>
-                        <img className="Card-front" src={ imageArray[this.props.card.cardValue - 1] }/>
+                        <img className="Card-front" src={ imageArray[this.props.card.cardValue - 1]} alt={ imageArray[this.props.card.cardValue - 1] } />
                     </span>
                 </ReactCardFlip>
 
