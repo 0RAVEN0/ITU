@@ -11,7 +11,7 @@
  */
 
  import React, {Component} from "react";
-import { Link } from 'react-router-dom';
+import {Link } from 'react-router-dom';
 import '../style/App.css';
 
 const navStyle = {
@@ -19,6 +19,7 @@ const navStyle = {
 };
 
 class Navigation extends Component{
+
 
     render(){
         return  (
@@ -28,13 +29,26 @@ class Navigation extends Component{
                 </Link>
                 <ul className="nav-links">
                     <Link style={navStyle} to='/packages'>
-                        <li>Change pack style</li>
+                        { 
+                        this.props.author === 'xdzuba00' 
+                        ? <li>Change pack style</li>
+                        : <li>ZMEŇ KARTY</li>
+                        }
+                        
                     </Link>
                     <Link style={navStyle} to='/amount'>
-                        <li>Change number of cards</li>
+                        { 
+                        this.props.author === 'xdzuba00' 
+                        ? <li>Change number of cards</li>
+                        : <li>ZMĚŇ POČET KARET</li>
+                        }
                     </Link>
                     <Link style={navStyle} to='/players'>
-                        <li>Change number of players</li>
+                        { 
+                        this.props.author === 'xdzuba00' 
+                        ? <li>Change number of cards</li>
+                        : <li>ZMĚŇ POČET KARET</li>
+                        }
                     </Link>
                 </ul>
             </div>

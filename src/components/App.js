@@ -26,17 +26,17 @@ const author = 'xocena06'; // defines authors visual differences use: xocena06 /
 class App extends Component {
   render(){
     return (
-            <Router>
-              <div className="App">
-                <Navigation author={author}/>
-                <Switch>
-                    <Route path="/" exact component={Home}/>
-                    <Route path="/packages" component={Packages} />
-                    <Route path="/amount" component={Amount}/>
-                    <Route path="/players" component={Player}/>
-                </Switch>
-              </div>
-            </Router>);
+      <Router>
+        <div className="App">
+          <Navigation author={author}/>
+          <Switch>
+              <Route path="/" exact component={Home}/>
+              <Route path="/packages" component={Packages} />
+              <Route path="/amount" component={Amount}/>
+              <Route path="/players" component={Player}/>
+          </Switch>
+        </div>
+      </Router>);
   }
 }
 

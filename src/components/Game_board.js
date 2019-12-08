@@ -22,7 +22,8 @@ const pexesoState = {WFTFC: "WAITING_FOR_THE_FIRST_CARD",
     WRONG:"WRONG",
     FINISH: "FINISH"};
 
-export const flips = {correct_pair: 0, all_pair: 0, score: 0, score2: 0, turns: 0}
+export const flips = {correct_pair: 0, all_pair: 0, score: 0, score2: 0, turns: 0};
+export const author = {name:''};
 
 
 //tato funkcia je z:... Pouzžívam ju na náhodné rozhodenie obrázkov.
@@ -82,21 +83,8 @@ class Game_board extends Component {
         };
     }
 
-    shuffleCards(){
-        var newPosition = this.state.cards;
-        var temp = newPosition[0][1];
-
-        newPosition[0][1].cardValue = newPosition[0][0].cardValue;
-        newPosition[0][0].cardValue = temp.cardValue; 
-
-        this.setState({
-            cards : newPosition
-        })
-
-        // this.setState({
-        //     cards: randomizeArray(this.state.cards)
-        // })
-        
+    componentDidMount() {
+        author.name = this.props.author;
     }
 
     cardClick(card) {
@@ -178,6 +166,22 @@ class Game_board extends Component {
     render() {
         const cardsRendered = this.state.cards.map((rowOfCards, rowIndex) =>
             <tr>{rowOfCards.map((card, indexOfCardInRow) => <td onClick={() => this.cardClick(card)}><Card card={card} author={this.props.author}/></td>)}</tr>);
+        
+        var mainInfo = '';
+        var score='';
+        var score2='';
+        if (this.props.author === 'xdzuba00'){
+            mainInfo = 'YOU HAVE |'+flips.correct_pair+'| PAIR FROM '+flips.all_pair;
+            score =  '1.PLAYER SCORE IS : '+flips.score;
+            score2 = '2.PLAYER SCORE IS : '+flips.score2;
+        }
+        else if (this.props.author === 'xocena06'){
+            mainInfo = 'UHODL SI '+flips.correct_pair+' PÁRŮ';
+            score =  'SKÓRE HRÁČ 1: '+flips.score;
+            score2 = 'SKÓRE HRÁČ 2: '+flips.score2;
+        }
+        
+        
         return (
             <div className={`App${this.props.author}`}>
                 <div className="gameState">
@@ -185,14 +189,14 @@ class Game_board extends Component {
                     { Click.click === 1 ? (this.state.player ? <p className="second">2.player on turn</p> : <p className="first">1.player on turn</p>) : "" }
                     { Click.click === 1 ?
                         <ul className="Info">
-                            <li>YOU HAVE |{flips.correct_pair}| PAIR FROM {flips.all_pair}</li>
-                            <li>1.PLAYER SCORE IS : {flips.score}</li>
-                            <li>2.PLAYER SCORE IS : {flips.score2}</li>
+                            <li>{mainInfo}</li>
+                            <li>{score}</li>
+                            <li>{score2}</li>
                         </ul>
                         :
                         <ul className="Info">
-                            <li>YOU HAVE |{flips.correct_pair}| PAIR FROM {flips.all_pair}</li>
-                    <li>YOUR SCORE IS : {flips.score} &emsp; TURNS : {this.state.turns}</li>
+                            <li>{mainInfo}</li>
+                            <li>{score2}</li>
                         </ul>
                     }
                 </div>

@@ -13,6 +13,8 @@
 
 import '../style/App.css';
 import {flips} from "./Game_board";
+import {author} from "./Game_board";
+
 
 export const Click = {click: 0};
 
@@ -39,14 +41,22 @@ class Player extends Component{
                         <tr>
                             <td>
                                 <button className="button" onClick={ () => this.game_player("one") }>
-                                    <p>1 players</p>
+                                { 
+                                author.name === 'xdzuba00' 
+                                ? <p>1 player</p>
+                                : <p>1 HRÁČ</p>
+                                }
+                                    
                                 </button>
                             </td>
                         </tr>
                         <tr>
                             <td>
-                                <button className="button" onClick={ () => this.game_player("two")}>
-                                    <p>2 players</p>
+                                <button className="button" onClick={ () => this.game_player("two")}>{ 
+                                author.name === 'xdzuba00' 
+                                ? <p>2 players</p>
+                                : <p>2 HRÁČI</p>
+                                }
                                 </button>
                             </td>
                         </tr>

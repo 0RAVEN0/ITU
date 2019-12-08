@@ -14,6 +14,7 @@ import React, { Component } from 'react';
 
 import '../style/App.css';
 import {flips} from "./Game_board";
+import {author} from "./Game_board";
 
 export const heightEnum = {height: '4'};
 export const widthEnum = {width: '4'};
@@ -49,28 +50,40 @@ class Amount extends Component{
         flips.score2 = 0;
         return  (
             <div className="gameState">
-                Choose the number of cards you would like.
                 <div className="gameBoard">
                     <table>
                         <tbody>
                         <tr>
                             <td>
                                 <button className="button" onClick={() => this.game_amount("12")}>
-                                    <p>12 cards</p>
+                                { 
+                                    author.name === 'xdzuba00' 
+                                    ? <p>12 cards</p>
+                                    : <p>12 KARET</p>
+                                }
+                                    
                                 </button>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <button className="button" onClick={() => this.game_amount("16")}>
-                                    <p>16 cards</p>
+                                { 
+                                    author.name === 'xdzuba00' 
+                                    ? <p>16 cards</p>
+                                    : <p>16 KARET</p>
+                                }
                                 </button>
                             </td>
                         </tr>
                         <tr>
                             <td>
                                 <button className="button" onClick={() => this.game_amount("20")}>
-                                    <p>20 cards</p>
+                                { 
+                                    author.name === 'xdzuba00' 
+                                    ? <p>20 cards</p>
+                                    : <p>20 KARET</p>
+                                }
                                 </button>  
                             </td>
                         </tr>
