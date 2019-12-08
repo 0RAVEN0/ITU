@@ -3,12 +3,23 @@
   background-position: center;
 }
 
-nav {
+.navxdzuba00 {
   display: flex;
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
   background: lightpink;
+  color: darkgrey;
+  font-family: "Copperplate Gothic Light", serif;
+  font-weight: normal;
+  box-shadow: 5px 5px 5px;
+}
+.navxocena06 {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background: #f76c6c;
   color: darkgrey;
   font-family: "Copperplate Gothic Light", serif;
   font-weight: normal;
@@ -69,8 +80,6 @@ nav {
   width:  100px;
   margin: 5px;
   position: relative;
-  box-shadow: 5px 5px 3px -2px rgba(0,0,0,0.2);
-  background-color: lightgoldenrodyellow;
   border-radius: 5px;
   color: darkgrey;
   text-align: center;
@@ -100,6 +109,7 @@ nav {
   background:  #ffffff;
   border-radius: 5px;
   vertical-align: center;
+  box-shadow: 3px 3px 3px 2.5px rgba(0,0,0,0.2);
 }
 
 .Card-back{
@@ -108,6 +118,7 @@ nav {
   background: lightgoldenrodyellow;
   border-radius: 5px;
   vertical-align: center;
+  box-shadow: 3px 3px 3px 2.5px rgba(0,0,0,0.2);
 }
 
 .button{

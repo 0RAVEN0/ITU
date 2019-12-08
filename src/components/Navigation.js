@@ -10,7 +10,7 @@ class Navigation extends Component{
 
     render(){
         return  (
-            <nav>
+            <div className={`nav${this.props.author}`}>
                 <Link style={navStyle} to='/'>
                     <h3>PEXESO</h3>
                 </Link>
@@ -25,7 +25,7 @@ class Navigation extends Component{
                         <li>Change number of players</li>
                     </Link>
                 </ul>
-            </nav>
+            </div>
         );
     }
 }

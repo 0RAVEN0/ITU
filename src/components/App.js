@@ -8,12 +8,15 @@ import {BrowserRouter as Router, Switch, Route } from "react-router-dom";
 
 import '../style/App.css';
 
+
+const author = 'xocena06'; // defines authors visual differences use: xocena06 / xdzuba00
+
 class App extends Component {
   render(){
     return (
             <Router>
               <div className="App">
-                <Navigation />
+                <Navigation author={author}/>
                 <Switch>
                     <Route path="/" exact component={Home}/>
                     <Route path="/packages" component={Packages}/>
@@ -27,7 +30,7 @@ class App extends Component {
 
 const Home = () => (
     <div>
-        <GameBoard />
+        <GameBoard author={author} />
     </div>
 );
 

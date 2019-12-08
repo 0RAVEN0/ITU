@@ -40,7 +40,6 @@ class Card extends Component{
     }
 
         render(){
-            
             const author = this.props.author;
             if(author === 'xocena06'){
                 cardBackImg = './logoBrno.jpg';

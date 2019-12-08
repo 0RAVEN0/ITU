@@ -5,7 +5,7 @@ import End from "./End";
 import { heightEnum, widthEnum } from "./Amount";
 import { Click } from "./Player";
 
-const author = 'xdzuba00'; // defines authors visual differences use: xocena06 / xdzuba00
+
 
 const pexesoState = {WFTFC: "WAITING_FOR_THE_FIRST_CARD",
     WFTSC: "WAITING_FOR_THE_SECOND_CARD",
@@ -150,9 +150,9 @@ class Game_board extends Component {
 
     render() {
         const cardsRendered = this.state.cards.map((rowOfCards, rowIndex) =>
-            <tr>{rowOfCards.map((card, indexOfCardInRow) => <td onClick={() => this.cardClick(card)}><Card card={card} author={author}/></td>)}</tr>);
+            <tr>{rowOfCards.map((card, indexOfCardInRow) => <td onClick={() => this.cardClick(card)}><Card card={card} author={this.props.author}/></td>)}</tr>);
         return (
-            <div className="App">
+            <div className={`App${this.props.author}`}>
                 <div className="gameState">
                     { this.state.gameStates === "FINISH" ? <End /> : "" }
                     { Click.click === 1 ? (this.state.player ? <p className="second">2.player on turn</p> : <p className="first">1.player on turn</p>) : "" }
