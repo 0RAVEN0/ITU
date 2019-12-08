@@ -21,6 +21,10 @@ class Packages extends Component{
                 packState.package = 'THIRD';
                 break;
 
+            case "K":
+            packState.package = 'KOSTOLY';
+            break;
+
             default:
                 alert("Wrong state\n");
                 break;
@@ -58,6 +62,14 @@ class Packages extends Component{
                                 <td>
                                     <button className="button" onClick={() => this.game_pack("T")}>
                                         <img className="button_image" src="./img3/cars.jpg" alt="Cars"/>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>KOSTOLY V BRNĚ</td>
+                                <td>
+                                    <button className="button" onClick={() => this.game_pack("K")}>
+                                        <img className="button_image" src="./kostolyBrno/kat_sv_petra_a_pavla.jpg" alt="Kostoly"/>
                                     </button>
                                 </td>
                             </tr>

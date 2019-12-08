@@ -4,8 +4,8 @@ import Card from "./Card";
 import End from "./End";
 import { heightEnum, widthEnum } from "./Amount";
 import { Click } from "./Player";
-import Confetti from "react-dom-confetti";
-import {Link} from "react-router-dom";
+
+const author = 'xdzuba00'; // defines authors visual differences use: xocena06 / xdzuba00
 
 const pexesoState = {WFTFC: "WAITING_FOR_THE_FIRST_CARD",
     WFTSC: "WAITING_FOR_THE_SECOND_CARD",
@@ -69,6 +69,23 @@ class Game_board extends Component {
             player: false};
     }
 
+    shuffleCards(){
+        var newPosition = this.state.cards;
+        var temp = newPosition[0][1];
+
+        newPosition[0][1].cardValue = newPosition[0][0].cardValue;
+        newPosition[0][0].cardValue = temp.cardValue; 
+
+        this.setState({
+            cards : newPosition
+        })
+
+        // this.setState({
+        //     cards: randomizeArray(this.state.cards)
+        // })
+        
+    }
+
     cardClick(card) {
 
         if(!card.flipped){
@@ -103,6 +120,7 @@ class Game_board extends Component {
                     }else{
                         this.setState({gameStates: pexesoState.WRONG, cards: this.state.cards, secondCard: card});
                     }
+                    this.state.cards[card.rowIndex][card.collumnIndex].flipped = true;
                     break;
 
                 case pexesoState.WRONG:
@@ -132,8 +150,7 @@ class Game_board extends Component {
 
     render() {
         const cardsRendered = this.state.cards.map((rowOfCards, rowIndex) =>
-            <tr>{rowOfCards.map((card, indexOfCardInRow) => <td onClick={() => this.cardClick(card)}><Card card={card}/>
-            </td>)}</tr>);
+            <tr>{rowOfCards.map((card, indexOfCardInRow) => <td onClick={() => this.cardClick(card)}><Card card={card} author={author}/></td>)}</tr>);
         return (
             <div className="App">
                 <div className="gameState">
@@ -158,6 +175,11 @@ class Game_board extends Component {
                         { cardsRendered }
                         </tbody>
                     </table>
+                </div>
+                <div>
+                    <button onClick={() => this.shuffleCards()}>
+                        Shuffle
+                    </button>
                 </div>
             </div>
 

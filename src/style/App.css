@@ -99,6 +99,7 @@ nav {
   width: 100px;
   background:  #ffffff;
   border-radius: 5px;
+  vertical-align: center;
 }
 
 .Card-back{
@@ -106,6 +107,7 @@ nav {
   width: 100%;
   background: lightgoldenrodyellow;
   border-radius: 5px;
+  vertical-align: center;
 }
 
 .button{
@@ -120,6 +122,9 @@ nav {
   border: none;
   outline: 0;
   margin: 10px;
+}
+.button:hover{
+  transform: scale(1.02);
 }
 .button:active{
   transform: scale(0.97);
