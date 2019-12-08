@@ -53,7 +53,7 @@ class Packages extends Component{
                                 <td>FROZEN</td>
                                 <td>
                                     <button className="button" onClick={() => this.game_pack("S")}>
-                                        <img className="button_image" src="./img2/frozen.jpg" alt="Frozen"/>
+                                        <img className="button_image" src="./img2/frozen.svg" alt="Frozen"/>
                                     </button>
                                 </td>
                             </tr>
@@ -61,7 +61,7 @@ class Packages extends Component{
                                 <td>CARS</td>
                                 <td>
                                     <button className="button" onClick={() => this.game_pack("T")}>
-                                        <img className="button_image" src="./img3/cars.jpg" alt="Cars"/>
+                                        <img className="button_image" src="./img3/cars.svg" alt="Cars"/>
                                     </button>
                                 </td>
                             </tr>
