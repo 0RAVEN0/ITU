@@ -14,11 +14,11 @@ class Card extends Component{
         }
 
         if (packState.package === "SECOND"){
-            imageArray=["./img2/frozen.jpg","./img2/frozen2.png","./img2/frozen3.png", "./img2/frozen4.png", "./img2/frozen5.png", "./img2/frozen6.png", "./img2/frozen7.png", "./img2/frozen8.png", "./img2/frozen9.png", "./img2/frozen10.png"]
+            imageArray=["./img2/frozen.svg","./img2/frozen2.svg","./img2/frozen3.svg", "./img2/frozen4.svg", "./img2/frozen5.svg", "./img2/frozen6.svg", "./img2/frozen7.svg", "./img2/frozen8.svg", "./img2/frozen9.svg", "./img2/frozen10.svg"]
         }
 
         if (packState.package === "THIRD"){
-            imageArray=["./img3/cars.jpg","./img3/car2.jpg", "./img3/car4.jpg", "./img3/car6.png", "./img3/car7.jpg", "./img3/car8.jpg", "./img3/car9.jpg", "./img3/car10.jpg","./img3/car3.jpg", "./img3/car5.jpg"]
+            imageArray=["./img3/cars.svg","./img3/car2.svg", "./img3/car4.svg", "./img3/car6.svg", "./img3/car7.svg", "./img3/car8.svg", "./img3/car9.svg", "./img3/car10.svg","./img3/car3.svg", "./img3/car5.svg"]
         }
     }
 
