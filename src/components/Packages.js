@@ -14,7 +14,7 @@
 import '../style/App.css';
 import {flips} from "./Game_board";
 
-export const packState = {package: 'FIRST'};
+export const packState = {package: 'KOSTOLY'};
 
 class Packages extends Component{
 
@@ -64,24 +64,7 @@ class Packages extends Component{
                                         <img className="button_image" src="./img/snoopy.png" alt="Snoopy"/>
                                     </button>
                                 </td>
-                            </tr>
-                            <tr>
-                                <td>FROZEN</td>
-                                <td>
-                                    <button className="button" onClick={() => this.game_pack("S")}>
-                                        <img className="button_image" src="./img2/frozen.svg" alt="Frozen"/>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td>CARS</td>
-                                <td>
-                                    <button className="button" onClick={() => this.game_pack("T")}>
-                                        <img className="button_image" src="./img3/cars.svg" alt="Cars"/>
-                                    </button>
-                                </td>
-                            </tr>
-                            <tr>
+                                
                                 <td>KOSTOLY V BRNĚ</td>
                                 <td>
                                     <button className="button" onClick={() => this.game_pack("K")}>
@@ -90,10 +73,25 @@ class Packages extends Component{
                                 </td>
                             </tr>
                             <tr>
+                                <td>FROZEN</td>
+                                <td>
+                                    <button className="button" onClick={() => this.game_pack("S")}>
+                                        <img className="button_image" src="./img2/frozen.svg" alt="Frozen"/>
+                                    </button>
+                                </td>
+                                
                                 <td>NÁMNĚSTÍ V BRNĚ</td>
                                 <td>
                                     <button className="button" onClick={() => this.game_pack("N")}>
                                         <img className="button_image" src="./namestiaBrno/svobodak.jfif" alt="Kostoly"/>
+                                    </button>
+                                </td>
+                            </tr>
+                            <tr>
+                                <td>CARS</td>
+                                <td>
+                                    <button className="button" onClick={() => this.game_pack("T")}>
+                                        <img className="button_image" src="./img3/cars.svg" alt="Cars"/>
                                     </button>
                                 </td>
                             </tr>

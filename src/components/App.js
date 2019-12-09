@@ -21,7 +21,7 @@ import {BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import '../style/App.css';
 
 
-const author = 'xdzuba00'; // defines authors visual differences use: xocena06 / xdzuba00
+const author = 'xocena06'; // defines authors visual differences use: xocena06 / xdzuba00
 
 class App extends Component {
   render(){

@@ -90,14 +90,14 @@ class Game_board extends Component {
     cardClick(card) {
 
         if(!card.flipped){
-            var inc = this.state.turns;
+            var turnsCount = this.state.turns;
             switch (this.state.gameStates) {
 
                 case pexesoState.WFTFC:
                     this.state.cards[card.rowIndex][card.collumnIndex].flipped = true;
                     
-                    inc++;
-                    this.setState({cards : this.state.cards, firstCard: card, gameStates: pexesoState.WFTSC, turns: inc});
+                    turnsCount++;
+                    this.setState({cards : this.state.cards, firstCard: card, gameStates: pexesoState.WFTSC, turns: turnsCount});
                     break;
 
                 case pexesoState.WFTSC:
@@ -151,8 +151,8 @@ class Game_board extends Component {
                     this.state.cards[this.state.secondCard.rowIndex][this.state.secondCard.collumnIndex].flipped = false;
                     this.state.cards[card.rowIndex][card.collumnIndex].flipped = true;
                     
-                    inc++;
-                    this.setState({gameStates: pexesoState.WFTSC, cards: this.state.cards, firstCard: card, player: !this.state.player,turns:inc});
+                    turnsCount++;
+                    this.setState({gameStates: pexesoState.WFTSC, cards: this.state.cards, firstCard: card, player: !this.state.player,turns:turnsCount});
                     break;
 
                 default:
@@ -165,20 +165,24 @@ class Game_board extends Component {
 
     render() {
         const cardsRendered = this.state.cards.map((rowOfCards, rowIndex) =>
-            <tr>{rowOfCards.map((card, indexOfCardInRow) => <td onClick={() => this.cardClick(card)}><Card card={card} author={this.props.author}/></td>)}</tr>);
+            <tr>{rowOfCards.map((card, indexOfCardInRow) => 
+                <td onClick={() => this.cardClick(card)}>
+                    <Card card={card} author={this.props.author}/>
+                </td>)}
+            </tr>);
         
         var mainInfo = '';
         var score='';
         var score2='';
         if (this.props.author === 'xdzuba00'){
             mainInfo = 'YOU HAVE |'+flips.correct_pair+'| PAIR FROM '+flips.all_pair;
-            score =  '1.PLAYER SCORE IS : '+flips.score;
-            score2 = '2.PLAYER SCORE IS : '+flips.score2;
+            score2 =  '2.PLAYER SCORE IS : '+flips.score2;
+            score = '1.PLAYER SCORE IS : '+flips.score;
         }
         else if (this.props.author === 'xocena06'){
             mainInfo = 'UHODL SI '+flips.correct_pair+' PÁRŮ';
-            score =  'SKÓRE HRÁČ 1: '+flips.score;
-            score2 = 'SKÓRE HRÁČ 2: '+flips.score2;
+            score2 =  'SKÓRE HRÁČ 2: '+flips.score2;
+            score = 'SKÓRE HRÁČ 1: '+flips.score;
         }
         
         
@@ -196,7 +200,7 @@ class Game_board extends Component {
                         :
                         <ul className="Info">
                             <li>{mainInfo}</li>
-                            <li>{score2}</li>
+                            <li>{score}</li>
                         </ul>
                     }
                 </div>
